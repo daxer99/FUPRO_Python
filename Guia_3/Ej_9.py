@@ -7,9 +7,10 @@ mayor_2 = 0
 menor = 5000
 suma = 0
 
-for i in range(50):
+for i in range(10):
     numero = rd.randint(1,5000)
     suma += numero
+    # print(numero)
 
     if numero < menor:
         menor = numero
@@ -20,3 +21,7 @@ for i in range(50):
         mayor_2 = aux
     elif numero > mayor_2:
         mayor_2 = numero
+
+print("Media: ",suma/50)
+print("Mayores: ",mayor_1," | ",mayor_2)
+print("Menor: ",menor)
