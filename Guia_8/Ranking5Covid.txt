@@ -1,0 +1,6 @@
+Pais,Casos Activos
+Alemania,1961532
+EEUU,1614346
+Francia,1166533
+Italia,1162517
+Reino Unido,450763

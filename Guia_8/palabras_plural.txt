@@ -1,0 +1,6 @@
+soles
+perros
+mares
+casas
+autos
+panales

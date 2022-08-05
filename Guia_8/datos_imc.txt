@@ -1,0 +1,6 @@
+Nombre: Rodrigo
+Apellido: Peralta
+Edad: 28
+DNI: 37562461
+IMC: 27.92 kg/m²
+Condición: Sobrepeso

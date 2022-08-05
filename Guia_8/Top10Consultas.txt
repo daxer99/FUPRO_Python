@@ -1,0 +1,11 @@
+Unidad Operativa,Total Historico de consultas (2013-2018)
+Emergencia - Urgencias,199103496
+Medicina General,116122584
+Pediatría,92721698
+Clínica Médica,64178587
+Tocoginecología,18403243
+Ginecología,17490683
+Oftalmología,16915768
+Cardiología,14341801
+Obstetricia,13489608
+Traumatología,13198752
