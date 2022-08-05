@@ -10,7 +10,7 @@ Escriba un algoritmo para calcular el costo de un viaje.
 inicio_viaje = float(input('Ingrese kilometros antes del viaje: '))
 fin_viaje = float(input('Ingrese kilometros despues del viaje: '))
 
-consumo_combustible = 0.09 # cantidad de litros consumidos / kmts recorridos, ver manual del vehículo, varía segun se transite en ruta o ciudad
+consumo_combustible = 0.07 # cantidad de litros consumidos / kmts recorridos, ver manual del vehículo, varía segun se transite en ruta o ciudad
 precio_litro_nafta = 125 #en caso de ser dia de descuento, se multiplica el precio por el porcentaje de descuento
 
 distancia_recorrida = fin_viaje - inicio_viaje
