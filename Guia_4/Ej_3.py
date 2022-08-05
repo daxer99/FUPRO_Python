@@ -17,7 +17,6 @@ elif opcion == 3:
 else:
     print("Opcion incorrecta ingresada")
 
-
 # Version 2
 # cadena = input("Ingrese cadena: ")
 # print("")
