@@ -32,3 +32,4 @@ for i in range(len(matrix)):
 print()
 print("Cantidad pacientes con hipoxemia: ",cant_pacientes_hipoxemia(matrix))
 
+
