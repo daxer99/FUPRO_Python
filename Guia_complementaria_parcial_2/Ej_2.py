@@ -12,10 +12,8 @@ d- Promedio de pacientes por día para el servicio de pediatría en julio
 e-  Cuáles fueron los dos servicios más requeridos en el verano
 f- Cuántos pacientes visitaron la clínica en todo el año '''
 
-# a = "11/22/33"
-# print(int(a[0:2]),int(a[3:5]),int(a[6:]))
-from operator import itemgetter
 
+from operator import itemgetter
 
 #######################################################################################################################
 entrada = open("clinica.txt")
@@ -57,6 +55,14 @@ while True:
 ########################################################################################################################
 suma_servicios = [0 for i in range(15)]
 servicios = [i for i in range(15)]
+suma_meses = [0 for i in range(12)]
+meses = [i for i in range(12)]
+pacientes_verano = 0
+pacientes_invierno = 0
+cantidad_visitas_julio = 0
+suma_servicios_verano = [0 for i in range(15)]
+total_pacientes = 0
+
 
 if anio == 2020:
     # A
@@ -67,3 +73,223 @@ if anio == 2020:
     suma_servicios= list(zip(servicios,suma_servicios))
     servicios_ordenados = sorted(suma_servicios,key=itemgetter(1),reverse = True)
     print("Los tres servicios mas requeridos durante todo el año fueron: ",servicios_ordenados[0][0]+1,servicios_ordenados[1][0]+1,servicios_ordenados[2][0]+1)
+
+    # B
+    for i in range(12):
+        for j in range(len(lista_2020)):
+            fecha = lista_2020[j][2]
+            mes = int(fecha[3:5])
+            if mes == i+1:
+                suma_meses[i]+=lista_2020[j][3]
+    suma_meses= list(zip(meses,suma_meses))
+    meses_ordenados = sorted(suma_meses,key=itemgetter(1),reverse = True)
+    print("El mes ",meses_ordenados[0][0]+1," fue el que mas visitas tuvo con ",meses_ordenados[0][1])
+
+    #C
+    for j in range(len(lista_2020)):
+        fecha = lista_2020[j][2]
+        dia = int(fecha[0:2])
+        mes = int(fecha[3:5])
+        if mes in (1,2,3):
+            season = 'summer'
+        elif mes in (7,8,9):
+            season = 'winter'
+
+        if (mes == 6) and (dia > 20):
+            season = 'winter'
+        elif (mes == 12) and (dia > 20):
+            season = 'summer'
+
+        if season == 'summer':
+            pacientes_verano += lista_2020[j][3]
+        elif season == 'winter':
+            pacientes_invierno += lista_2020[j][3]
+
+    print("En verano asistieron ",pacientes_verano," pacientes")
+    print("En invierno asistieron ",pacientes_invierno," pacientes")
+
+    # D
+    for j in range(len(lista_2020)):
+        fecha = lista_2020[j][2]
+        mes = int(fecha[3:5])
+        if mes == 6 and lista_2020[j][1]=="Pediatria":
+            cantidad_visitas_julio += lista_2020[j][3]
+
+    print("Promedio de pacientes por día para el servicio de pediatría en julio: ", round(cantidad_visitas_julio/31,2))
+
+    # E
+    for i in range(15):
+        for j in range(len(lista_2020)):
+            fecha = lista_2020[j][2]
+            dia = int(fecha[0:2])
+            mes = int(fecha[3:5])
+            if mes in (1, 2, 3):
+                season = 'summer'
+            if (mes == 12) and (dia > 20):
+                season = 'summer'
+            elif (mes == 3) and (dia > 19):
+                season = 'autumn'
+
+            if lista_2020[j][0] == i+1 and season == 'summer':
+                suma_servicios_verano[i]+=lista_2020[j][3]
+    suma_servicios_verano= list(zip(servicios,suma_servicios_verano))
+    servicios_verano_ordenados = sorted(suma_servicios_verano,key=itemgetter(1),reverse = True)
+    print("Los dos servicios mas requeridos durante el verano fueron: ", servicios_verano_ordenados[0][0] + 1, servicios_verano_ordenados[1][0] + 1)
+
+    # F
+    for j in range(len(lista_2020)):
+        total_pacientes += lista_2020[j][3]
+    print("El total de pacientes que asistió a la clínica fue de ",total_pacientes)
+elif anio == 2021:
+    # A
+    for i in range(15):
+        for j in range(len(lista_2021)):
+            if lista_2021[j][0] == i+1:
+                suma_servicios[i]+=lista_2021[j][3]
+    suma_servicios= list(zip(servicios,suma_servicios))
+    servicios_ordenados = sorted(suma_servicios,key=itemgetter(1),reverse = True)
+    print("Los tres servicios mas requeridos durante todo el año fueron: ",servicios_ordenados[0][0]+1,servicios_ordenados[1][0]+1,servicios_ordenados[2][0]+1)
+
+    # B
+    for i in range(12):
+        for j in range(len(lista_2021)):
+            fecha = lista_2021[j][2]
+            mes = int(fecha[3:5])
+            if mes == i+1:
+                suma_meses[i]+=lista_2021[j][3]
+    suma_meses= list(zip(meses,suma_meses))
+    meses_ordenados = sorted(suma_meses,key=itemgetter(1),reverse = True)
+    print("El mes ",meses_ordenados[0][0]+1," fue el que mas visitas tuvo con ",meses_ordenados[0][1])
+
+    #C
+    for j in range(len(lista_2021)):
+        fecha = lista_2021[j][2]
+        dia = int(fecha[0:2])
+        mes = int(fecha[3:5])
+        if mes in (1,2,3):
+            season = 'summer'
+        elif mes in (7,8,9):
+            season = 'winter'
+
+        if (mes == 6) and (dia > 20):
+            season = 'winter'
+        elif (mes == 12) and (dia > 20):
+            season = 'summer'
+
+        if season == 'summer':
+            pacientes_verano += lista_2021[j][3]
+        elif season == 'winter':
+            pacientes_invierno += lista_2021[j][3]
+
+    print("En verano asistieron ",pacientes_verano," pacientes")
+    print("En invierno asistieron ",pacientes_invierno," pacientes")
+
+    # D
+    for j in range(len(lista_2021)):
+        fecha = lista_2021[j][2]
+        mes = int(fecha[3:5])
+        if mes == 6 and lista_2021[j][1]=="Pediatria":
+            cantidad_visitas_julio += lista_2021[j][3]
+
+    print("Promedio de pacientes por día para el servicio de pediatría en julio: ", round(cantidad_visitas_julio/31,2))
+
+    # E
+    for i in range(15):
+        for j in range(len(lista_2021)):
+            fecha = lista_2021[j][2]
+            dia = int(fecha[0:2])
+            mes = int(fecha[3:5])
+            if mes in (1, 2, 3):
+                season = 'summer'
+            if (mes == 12) and (dia > 20):
+                season = 'summer'
+            elif (mes == 3) and (dia > 19):
+                season = 'autumn'
+
+            if lista_2021[j][0] == i+1 and season == 'summer':
+                suma_servicios_verano[i]+=lista_2021[j][3]
+    suma_servicios_verano= list(zip(servicios,suma_servicios_verano))
+    servicios_verano_ordenados = sorted(suma_servicios_verano,key=itemgetter(1),reverse = True)
+    print("Los dos servicios mas requeridos durante el verano fueron: ", servicios_verano_ordenados[0][0] + 1, servicios_verano_ordenados[1][0] + 1)
+
+    # F
+    for j in range(len(lista_2021)):
+        total_pacientes += lista_2021[j][3]
+    print("El total de pacientes que asistió a la clínica fue de ",total_pacientes)
+
+if anio == 2022:
+    # A
+    for i in range(15):
+        for j in range(len(lista_2022)):
+            if lista_2022[j][0] == i+1:
+                suma_servicios[i]+=lista_2022[j][3]
+    suma_servicios= list(zip(servicios,suma_servicios))
+    servicios_ordenados = sorted(suma_servicios,key=itemgetter(1),reverse = True)
+    print("Los tres servicios mas requeridos durante todo el año fueron: ",servicios_ordenados[0][0]+1,servicios_ordenados[1][0]+1,servicios_ordenados[2][0]+1)
+
+    # B
+    for i in range(12):
+        for j in range(len(lista_2022)):
+            fecha = lista_2022[j][2]
+            mes = int(fecha[3:5])
+            if mes == i+1:
+                suma_meses[i]+=lista_2022[j][3]
+    suma_meses= list(zip(meses,suma_meses))
+    meses_ordenados = sorted(suma_meses,key=itemgetter(1),reverse = True)
+    print("El mes ",meses_ordenados[0][0]+1," fue el que mas visitas tuvo con ",meses_ordenados[0][1])
+
+    #C
+    for j in range(len(lista_2022)):
+        fecha = lista_2022[j][2]
+        dia = int(fecha[0:2])
+        mes = int(fecha[3:5])
+        if mes in (1,2,3):
+            season = 'summer'
+        elif mes in (7,8,9):
+            season = 'winter'
+
+        if (mes == 6) and (dia > 20):
+            season = 'winter'
+        elif (mes == 12) and (dia > 20):
+            season = 'summer'
+
+        if season == 'summer':
+            pacientes_verano += lista_2022[j][3]
+        elif season == 'winter':
+            pacientes_invierno += lista_2022[j][3]
+
+    print("En verano asistieron ",pacientes_verano," pacientes")
+    print("En invierno asistieron ",pacientes_invierno," pacientes")
+
+    # D
+    for j in range(len(lista_2022)):
+        fecha = lista_2022[j][2]
+        mes = int(fecha[3:5])
+        if mes == 6 and lista_2022[j][1]=="Pediatria":
+            cantidad_visitas_julio += lista_2022[j][3]
+
+    print("Promedio de pacientes por día para el servicio de pediatría en julio: ", round(cantidad_visitas_julio/31,2))
+
+    # E
+    for i in range(15):
+        for j in range(len(lista_2022)):
+            fecha = lista_2022[j][2]
+            dia = int(fecha[0:2])
+            mes = int(fecha[3:5])
+            if mes in (1, 2, 3):
+                season = 'summer'
+            if (mes == 12) and (dia > 20):
+                season = 'summer'
+            elif (mes == 3) and (dia > 19):
+                season = 'autumn'
+
+            if lista_2022[j][0] == i+1 and season == 'summer':
+                suma_servicios_verano[i]+=lista_2022[j][3]
+    suma_servicios_verano= list(zip(servicios,suma_servicios_verano))
+    servicios_verano_ordenados = sorted(suma_servicios_verano,key=itemgetter(1),reverse = True)
+    print("Los dos servicios mas requeridos durante el verano fueron: ", servicios_verano_ordenados[0][0] + 1, servicios_verano_ordenados[1][0] + 1)
+
+    # F
+    for j in range(len(lista_2022)):
+        total_pacientes += lista_2022[j][3]
+    print("El total de pacientes que asistió a la clínica fue de ",total_pacientes)
