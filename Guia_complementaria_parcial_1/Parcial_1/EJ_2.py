@@ -2,7 +2,7 @@
 
 import random as r
 
-datos = [r.randint(-50,50) for i in range(25)]
+datos = [r.randint(-50,50) for i in range(15)]
 c = 0
 for i in range(1,len(datos)):
     if datos[i-1]*datos[i] < 0:
