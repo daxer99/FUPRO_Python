@@ -1,0 +1,24 @@
+TOP 10 Exitos,,
+Pelicula,Año de estreno,Ganancia
+Cutie and the Boxer,2013,2750136650.64
+In Secret,2013,2586236847.1
+Hombre,1967,2234713670.8
+Le Bonheur est dans le prÃ©,1995,2128035624.37
+Heyy Babyy,2007,1878643093.8
+This Film Is Not Yet Rated,2006,1767968063.77
+Guardians of the Galaxy,2014,1718723211.0
+Battlestar Galactica,1978,1551568264.92
+ì§íŒ¨,2006,1545635295.17
+Homeless to Harvard: The Liz Murray Story,2003,1376997526.45
+TOP 10 Fracasos,,
+Pelicula,Año de estreno,Ganancia
+The Sunset Limited,2011,-413912431.0
+Awake,2007,-155110171.08
+Bio-Dome,1996,-137586847.8
+Snow Flower and the Secret Fan,2011,-128681336.13
+The Texas Chainsaw Massacre 2,1986,-118534968.1618388
+The Dentist,1996,-113737078.75
+Do the Right Thing,1989,-112614267.191
+The Other Boleyn Girl,2008,-107610203.12
+Something the Lord Made,2004,-107205949.21499999
+Night Owls,2015,-95189608.25999999

@@ -1,0 +1,2 @@
+# def filtrarXgenero(data,genero):
+#
