@@ -1,12 +1,12 @@
-nombres = []
-
+juan = 0
+maria =0
 nombre = input("Ingrese nombre, fin para terminar: ")
-
 while nombre !="fin":
-    nombres.append(nombre)
+    if nombre.lower() == 'maria':
+        maria += 1
+    elif nombre.lower() == 'juan':
+        juan += 1
     nombre = input("Ingrese nombre, fin para terminar: ")
 
-nombres_ordenados = sorted(nombres)
-
-for i in nombres_ordenados:
-    print(i)
+print("Cantidad de juan:",juan)
+print("Cantidad de maria:",maria)
