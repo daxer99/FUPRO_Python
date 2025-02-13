@@ -19,17 +19,17 @@ def cant_pacientes_hipoxemia(matrix):
         c=0
     return cant
 
-rows, cols = 2,7
+rows, cols = 3,7
 matrix = [([0]*cols) for i in range(rows)]
 
 for i in range(len(matrix)):
     cod_paciente = int(input("Ingrese cod de paciente (1-65): "))
     for j in range(len(matrix[0])):
-        medicion = random.randint(65,99)
+        medicion = random.randint(65,80)
         #medicion = int(input("Para el paciente "+str(cod_paciente +1)+" ingrese la medicion "+str(j+1)+":"))
         matrix[cod_paciente-1][j] = medicion
 
 print()
 print("Cantidad pacientes con hipoxemia: ",cant_pacientes_hipoxemia(matrix))
-
+print(matrix)
 
