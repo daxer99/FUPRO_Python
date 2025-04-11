@@ -6,7 +6,6 @@ b) ¿Cuántos ratones superaron el peso de 580 gr al final de período?
 c) El nº del ratón que logró el mayor peso.'''
 
 import random
-
 ratones_mas_580 = 0
 raton_mayor_peso = 0
 mayor_peso = 0

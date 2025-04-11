@@ -17,6 +17,6 @@ if asistencia >= 75:
         if nota1 >=50 and nota2 >=50:
             print("Condicion: Regular")
     else:
-        pass
+        print("Condicion: Libre")
 else:
     print("Condicion: Libre")
