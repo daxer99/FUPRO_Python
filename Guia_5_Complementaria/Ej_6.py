@@ -8,6 +8,7 @@ d) El tiempo de descanso del alpinista.'''
 #A
 coordenadas = []
 
+
 while True:
     x = int(input('Ingrese coordenada X: '))
     y = int(input('Ingrese coordenada Y: '))
