@@ -1,3 +1,9 @@
+'''3. Se leen por consola los registros de infectados y fallecidos en el año 2020
+de 15 países (nombre del país, número infectados, número fallecidos) y se los almacena en una lista.
+a) Calcule e informe la proporción de fallecidos respecto de infectados del país 5 en 2020.
+b) Informe cuántos países tuvieron % de mortalidad superior al 3% en 2020 y los nombres de los mismos.
+c) Calcule e informe el total de muertes de todo 2020.'''
+
 datos =[]
 for i in range(15):
     nom = input()
