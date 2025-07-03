@@ -9,6 +9,14 @@ def leer_csv(nombre_archivo):
             lista.append(fila)
     return lista
 netflix_data = leer_csv('netflix.csv')
+netflix_data_series = []
+netflix_data_peliculas = []
+for fila in netflix_data:
+    if fila[0] == 'Movie':
+        netflix_data_peliculas.append(fila)
+    elif fila[0] == 'TV Show':
+        netflix_data_series.append(fila)
+
 movies_imdb_data = leer_csv('imdb_top_1000_movies.csv')
 series_imdb_data = leer_csv('imdb_top_1000_series.csv')
 
@@ -47,3 +55,79 @@ series_imdb_data = leer_csv('imdb_top_1000_series.csv')
 #     for i in range(5):
 #         file.write(netflix_series_00s_imdb_sorted[i][0]+','+netflix_series_00s_imdb_sorted[i][1]+','+netflix_series_00s_imdb_sorted[i][2]+'\n')
 
+#Punto 4
+def filtrarXgenero(datos,genero):
+    lista = []
+    for i in range(len(datos)):
+        if genero.lower() in datos[i][9].lower():
+                 lista.append(datos[i][1])
+    return lista
+
+def filtrarXactor(datos,actor):
+    lista = []
+    for i in range(len(datos)):
+        if actor.lower() in datos[i][3].lower():
+            lista.append(datos[i][1])
+    return lista
+
+def filtrarXdirector(datos,director):
+    lista = []
+    for i in range(len(datos)):
+        if director.lower() in datos[i][2].lower():
+            lista.append(datos[i][1])
+    return lista
+
+def filtrarXanioAñadida(datos,anio):
+    lista = []
+    for i in range(len(datos)):
+        if anio in datos[i][5].lower():
+            lista.append(datos[i][1])
+    return lista
+
+def filtrarXanioRealizada(datos,anio):
+    lista = []
+    for i in range(len(datos)):
+        if anio == datos[i][6]:
+            lista.append(datos[i][1])
+    return lista
+
+#Punto 5
+# anios = []
+# for i in range(len(netflix_data_peliculas)):
+#     year = netflix_data_peliculas[i][5].strip(' ').split(',')
+#     if year[1].strip(' ') not in anios:
+#         anios.append(year[1].strip(' '))
+#
+# cantidad_peliculas_realizadas_x_anio = []
+# for i in range(len(anios)):
+#     cantidad_peliculas_realizadas_x_anio.append([anios[i],len(filtrarXanioAñadida(netflix_data_peliculas,anios[i]))])
+# ordenada = sorted(cantidad_peliculas_realizadas_x_anio,key=lambda x: x[1])
+# print(ordenada[0])
+
+#Punto 6
+# anios = []
+# for i in range(len(netflix_data_series)):
+#     if netflix_data_series[i][6] not in anios:
+#         anios.append(netflix_data_series[i][6])
+#
+# series_drama = []
+# for fila in netflix_data_series:
+#     if 'drama' in fila[9].lower():
+#         series_drama.append(fila)
+#
+# cantidad_series_drama_realizadas_x_anio = []
+# for i in range(len(anios)):
+#     cantidad_series_drama_realizadas_x_anio.append([anios[i],len(filtrarXanioRealizada(series_drama,anios[i]))])
+# ordenada = sorted(cantidad_series_drama_realizadas_x_anio,key=lambda x: x[1],reverse=True)
+# print(ordenada[0])
+
+#Punto 7
+# pelis_spielberg = filtrarXdirector(netflix_data_peliculas,'Steven Spielberg')
+# pelis_ford = filtrarXactor(netflix_data_peliculas,'Harrison Ford')
+# contador = 0
+#
+# for i in range(len(pelis_spielberg)):
+#     for j in range(len(pelis_ford)):
+#         if pelis_spielberg[i].lower() == pelis_ford[j].lower():
+#             contador += 1
+# print(contador)
