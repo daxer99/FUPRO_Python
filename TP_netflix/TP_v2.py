@@ -126,10 +126,6 @@ def filtrarXanioRealizada(datos,anio):
 # print(contador)
 
 #Defensa
-'''cuantas series se produjeron en mas de un pais
-cuantas peliculas del genero action tienen una duración mayor al promedio de todas las películas de este género
-En cuantas peliculas dirigidas por Martin Scorsese actua Leonardo DiCaprio
-'''
 
 #1 Cuantas comedias románticas hay en el top 1000 de peliculas
 # c = 0
@@ -161,3 +157,14 @@ En cuantas peliculas dirigidas por Martin Scorsese actua Leonardo DiCaprio
 #     if peliculas_action_duracion[i]>promedio_duracion:
 #         c+=1
 # print(c)
+
+#4 En cuantas peliculas dirigidas por Martin Scorsese actua Leonardo DiCaprio
+pelis_director = filtrarXdirector(netflix_data_peliculas,'Martin Scorsese')
+pelis_actor = filtrarXactor(netflix_data_peliculas,'Leonardo DiCaprio')
+comun =[]
+
+for i in range(len(pelis_director)):
+    for j in range(len(pelis_actor)):
+        if pelis_director[i].lower() == pelis_actor[j].lower():
+            comun.append(pelis_director[i])
+print(comun)

@@ -175,10 +175,10 @@ def filtrarXanioRealizada(datos,anio):
 # 4 En cuantas peliculas dirigidas por Quentin Tarantino actua Uma Thurman
 pelis_director = filtrarXdirector(netflix_data_peliculas,'Quentin Tarantino')
 pelis_actor = filtrarXactor(netflix_data_peliculas,'Uma Thurman')
-contador = 0
+comun =[]
 
 for i in range(len(pelis_director)):
     for j in range(len(pelis_actor)):
         if pelis_director[i].lower() == pelis_actor[j].lower():
-            contador += 1
-print(contador)
+            comun.append(pelis_director[i])
+print(comun)
