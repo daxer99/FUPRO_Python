@@ -131,3 +131,54 @@ def filtrarXanioRealizada(datos,anio):
 #         if pelis_spielberg[i].lower() == pelis_ford[j].lower():
 #             contador += 1
 # print(contador)
+
+#Defensa
+#1 Cuantas peliculas del genero drama tienen más de 1 director
+# peliculas_drama = []
+# for fila in netflix_data_peliculas:
+#     if 'drama' in fila[9].lower():
+#         peliculas_drama.append(fila)
+# contador = 0
+# for fila in peliculas_drama:
+#     directores = fila[2].split(',')
+#     if len(directores) > 1:
+#         contador += 1
+# print(contador)
+
+#2 En que año se realizaron más series del genero acción y aventura
+# anios = []
+# for i in range(len(netflix_data_series)):
+#     if netflix_data_series[i][6] not in anios:
+#         anios.append(netflix_data_series[i][6])
+#
+# series_aa = []
+# for fila in netflix_data_series:
+#     if 'Action & Adventure' in fila[9]:
+#         series_aa.append(fila)
+#
+# cantidad_series_aa_realizadas_x_anio = []
+# for i in range(len(anios)):
+#     cantidad_series_aa_realizadas_x_anio.append([anios[i],len(filtrarXanioRealizada(series_aa,anios[i]))])
+# ordenada = sorted(cantidad_series_aa_realizadas_x_anio,key=lambda x: x[1],reverse=True)
+# print(ordenada[0])
+
+#3 cuantas peliculas se añadieron a la plataforma el mismo año en que fueron realizadas
+# contador = 0
+# for fila in netflix_data_peliculas:
+#     aniadida = fila[5].split(',')
+#     aniadida = int(aniadida[1])
+#     realizada = int(fila[6])
+#     if aniadida == realizada:
+#         contador += 1
+# print(contador)
+
+# 4 En cuantas peliculas dirigidas por Quentin Tarantino actua Uma Thurman
+pelis_director = filtrarXdirector(netflix_data_peliculas,'Quentin Tarantino')
+pelis_actor = filtrarXactor(netflix_data_peliculas,'Uma Thurman')
+contador = 0
+
+for i in range(len(pelis_director)):
+    for j in range(len(pelis_actor)):
+        if pelis_director[i].lower() == pelis_actor[j].lower():
+            contador += 1
+print(contador)
