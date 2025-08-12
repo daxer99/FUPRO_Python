@@ -1,4 +1,3 @@
-'''Diseñe e implemente un programa en Python que lea un número entero e informe si es primo o no.'''
 numero = int(input("Ingrese número: "))
 contador = 0
 

@@ -1,5 +1,3 @@
-'''6. Escriba un programa en Python que informe los números primos menores que 100.'''
-
 contador = 0
 numero = 2
 

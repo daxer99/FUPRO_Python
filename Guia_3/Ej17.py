@@ -1,6 +1,4 @@
-''' Escriba un programa en Python que informe los primeros 100 números primo.'''
-
-cant_nros_primos = 10
+cant_nros_primos = 100
 contador = 0
 numero = 2
 i = 0

@@ -1,5 +1,3 @@
-''' Exhibir en pantalla 50 datos numéricos generados al azar entre 1 y 5000. Obtener como salida los siguientes parámetros estadísticos:
-a) la media b) los 2 mayores c) el menor de la lista.'''
 import random as rd
 
 mayor_1 = 0
