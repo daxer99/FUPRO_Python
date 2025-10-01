@@ -1,34 +1,26 @@
-'''Una asociación cooperadora escolar recibe aportes de dinero variable de los estudiantes asociados. Se leen sin orden alguno los montos aportados en el último año y la fecha correspondiente (día, mes). Estos datos terminan con el valor de monto cero. Informe:
-a. el total recaudado por mes.
-b. El mes de menor aporte.
-Para resolver el problema organice los datos en una lista de 12 elementos.'''
+'''Escriba un programa que genere al azar 1000 coordenadas en el plano con valores de "x"
+comprendidos entre -50 y 100, y valores de "y" comprendidos entre -10 y 25. Posteriormente
+el programa debe solicitar las coordenadas del centro y el valor del radio de una circunferencia
+e indicar cuántos de los puntos del plano se encuentran dentro de la circunferencia.'''
 
-aportes = []
-for i in range(12):
-    aportes.append(0)
+import random as rd
+import math as m
 
-aportes = [0 for i in range(12) if True]
+x = []
+y = []
+for i in range(0, 1000):
+    x.append(rd.randint(-50, 100))
+    y.append(rd.randint(-10, 25))
 
-dia = input("Ingrese dia: ")
-mes = int(input("Ingrese mes: "))
-monto = float(input("Ingrese monto: "))
+cx = int(input("Ingrese coordenada X: "))
+cy = int(input("Ingrese coordenada Y: "))
+radio = int(input("Ingrese radio: "))
 
-while monto !=0:
-    aportes[mes-1] += monto
+cont = 0
 
-    dia = input("Ingrese dia: ")
-    mes = int(input("Ingrese mes: "))
-    monto = float(input("Ingrese monto"))
+for i in range(0, 1000):
+    dist = m.sqrt(pow(cx - x[i], 2) + pow(cy - y[i], 2))
+    if radio <= dist:
+        cont = cont + 1
 
-for i in range(len(aportes)):
-    print("La recaudacion del mes "+str(i+1)+ " fue de: ",aportes[i])
-
-menor_recaudacion = aportes[0]
-mes_menor_recaudacion = 0
-for i in range(len(aportes)):
-    if aportes[i]<menor_recaudacion:
-        mes_menor_recaudacion = i
-
-# menor_recaudacion = min(aportes)
-# mes_menor_recaudacion = aportes.index(menor_recaudacion)
-print("El mes de menor recaudacion es: ",mes_menor_recaudacion+1)
+print(cont, " puntos se encuentran dentro de la circunferencia")
