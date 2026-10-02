@@ -1,0 +1,39 @@
+'''12. En una estación meteorológica se registran mediciones de temperatura (en °C) cada 4 horas durante el mes de marzo.
+Para cada día se ingresan:
+número de día
+6 temperaturas (una cada 4 horas)
+Se pide:
+a) Calcular la temperatura promedio de cada día.
+b) Determinar cuántos días tuvieron al menos una temperatura superior a 35°C.
+c) Informar el día con mayor temperatura máxima registrada.
+d) Calcular cuántas mediciones totales estuvieron por debajo de 0°C.'''
+
+bajo_cero = 0
+mayor_temp = 0
+dia_mayor_temp = 0
+temp_mas_35 = 0
+for i in range(31):
+    suma = 0
+    c = 0
+    for j in range(6):
+        temperatura = int(input('Ingrese temperatura: '))
+        suma +=temperatura
+        
+        if temperatura > 35:
+            c+=1
+        
+        if temperatura > mayor_temp:
+            mayor_temp = temperatura
+            dia_mayor_temp = i+1
+        
+        if temperatura < 0:
+            bajo_cero+=1
+    
+    if c>0:
+        temp_mas_35+=1
+    print('promedio dia',i+1,': ',suma/6)
+
+print(temp_mas_35)
+print(dia_mayor_temp)
+print(bajo_cero)
+    
